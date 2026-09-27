@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurevant — Essence of Distinction</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#080808;
+color:#f5f0e6;
+line-height:1.6;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+z-index:10;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 7%;
+background:rgba(8,8,8,.92);
+border-bottom:1px solid #292318;
+}
+
+.logo{
+font-size:22px;
+letter-spacing:4px;
+color:#d6b36a;
+font-weight:bold;
+}
+
+nav a{
+color:#eee;
+text-decoration:none;
+margin-left:20px;
+font-size:13px;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:100px 20px 50px;
+background:
+radial-gradient(circle at 50% 35%,#302515 0,#0b0a08 35%,#080808 70%);
+}
+
+.hero h1{
+font-family:Georgia,serif;
+font-size:clamp(48px,10vw,100px);
+font-weight:400;
+letter-spacing:-3px;
+margin-bottom:15px;
+}
+
+.hero p{
+color:#c9c1b3;
+font-size:16px;
+letter-spacing:3px;
+text-transform:uppercase;
+}
+
+.btn{
+display:inline-block;
+margin-top:35px;
+padding:15px 28px;
+border:1px solid #caa45d;
+color:#fff;
+text-decoration:none;
+border-radius:2px;
+transition:.3s;
+}
+
+.btn:hover{
+background:#caa45d;
+color:#111;
+}
+
+section{
+padding:90px 7%;
+}
+
+.title{
+font-family:Georgia,serif;
+font-size:42px;
+font-weight:400;
+margin-bottom:12px;
+}
+
+.subtitle{
+color:#aaa;
+margin-bottom:40px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+}
+
+.card{
+background:#111;
+border:1px solid #29251e;
+padding:25px;
+border-radius:8px;
+}
+
+.card .bottle{
+height:230px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(145deg,#1b1813,#080808);
+margin-bottom:20px;
+font-size:22px;
+color:#d6b36a;
+letter-spacing:2px;
+}
+
+.card h3{
+font-family:Georgia,serif;
+font-size:25px;
+font-weight:400;
+}
+
+.price{
+color:#d6b36a;
+font-size:18px;
+margin-top:8px;
+}
+
+.order{
+display:block;
+text-align:center;
+margin-top:20px;
+padding:12px;
+background:#d6b36a;
+color:#111;
+text-decoration:none;
+font-weight:bold;
+border-radius:3px;
+}
+
+.story{
+max-width:750px;
+margin:auto;
+text-align:center;
+}
+
+.story p{
+color:#bcb6aa;
+font-size:17px;
+margin-top:20px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:45px;
+}
+
+.feature{
+border-top:1px solid #51442c;
+padding-top:20px;
+}
+
+.feature h3{
+color:#d6b36a;
+margin-bottom:8px;
+}
+
+footer{
+padding:45px 20px;
+text-align:center;
+border-top:1px solid #292318;
+color:#888;
+}
+
+@media(max-width:600px){
+nav{
+padding:15px 5%;
+}
+
+nav a{
+margin-left:8px;
+font-size:11px;
+}
+
+section{
+padding:70px 5%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">AUREVANT</div>
+
+<div>
+<a href="#collection">Collection</a>
+<a href="#story">Story</a>
+<a href="#order">Order</a>
+</div>
+</nav>
+
+<section class="hero">
+
+<div>
+<p>Essence of Distinction</p>
+
+<h1>Wear the Presence.</h1>
+
+<p>Luxury fragrances for those who leave an impression.</p>
+
+<a class="btn" href="#collection">Explore Collection</a>
+</div>
+
+</section>
+
+<section id="collection">
+
+<h2 class="title">The Collection</h2>
+
+<p class="subtitle">
+Selected fragrances. Distinct character. Refined presence.
+</p>
+
+<div class="products">
+
+<div class="card">
+<div class="bottle">HAWAS ICE</div>
+<h3>Rasasi Hawas Ice</h3>
+<div class="price">৳4,000</div>
+
+<a class="order"
+href="https://wa.me/8801806413849?text=Hello%20Aurevant,%20I%20want%20to%20order%20Rasasi%20Hawas%20Ice">
+Order on WhatsApp
+</a>
+</div>
+
+<div class="card">
+<div class="bottle">CDNIM</div>
+<h3>Club de Nuit Intense Man</h3>
+<div class="price">Message for price</div>
+
+<a class="order"
+href="https://wa.me/8801806413849?text=Hello%20Aurevant,%20I%20want%20to%20order%20Club%20de%20Nuit%20Intense%20Man">
+Order on WhatsApp
+</a>
+</div>
+
+<div class="card">
+<div class="bottle">SAUVAGE</div>
+<h3>Dior Sauvage EDP</h3>
+<div class="price">Message for price</div>
+
+<a class="order"
+href="https://wa.me/8801806413849?text=Hello%20Aurevant,%20I%20want%20to%20order%20Dior%20Sauvage%20EDP">
+Order on WhatsApp
+</a>
+</div>
+
+</div>
+</section>
+
+<section id="story">
+
+<div class="story">
+
+<h2 class="title">Two Souls. One Essence.</h2>
+
+<p>
+Aurevant was created for people who understand that fragrance
+is more than a scent. It is presence, memory and identity.
+Every selection is chosen to bring elegance and distinction
+to your everyday moments.
+</p>
+
+<div class="features">
+
+<div class="feature">
+<h3>Premium Selection</h3>
+<p>Carefully selected fragrances from sought-after collections.</p>
+</div>
+
+<div class="feature">
+<h3>Authenticity First</h3>
+<p>We focus on genuine products and transparent service.</p>
+</div>
+
+<div class="feature">
+<h3>Nationwide Delivery</h3>
+<p>Order from anywhere in Bangladesh through WhatsApp.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="order">
+
+<div class="story">
+
+<h2 class="title">Ready to Find Your Signature?</h2>
+
+<p>Message Aurevant directly to place your order.</p>
+
+<a class="btn"
+href="https://wa.me/8801806413849?text=Hello%20Aurevant,%20I%20want%20to%20place%20an%20order">
+Order via WhatsApp
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Aurevant — Essence of Distinction
+</footer>
+
+</body>
+</html>
