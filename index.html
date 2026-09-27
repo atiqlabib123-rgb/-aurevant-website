@@ -6,198 +6,602 @@
 <title>Aurevant — Essence of Distinction</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
-body{
-font-family:Arial,Helvetica,sans-serif;
-background:#080808;
-color:#f5f0e6;
-line-height:1.6;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#070707;
+  color:#f5efe5;
+  font-family:Montserrat,Arial,sans-serif;
+  overflow-x:hidden;
+}
+
+:root{
+  --gold:#cda45d;
+  --gold2:#f0d59b;
+  --cream:#f5efe5;
+  --dark:#070707;
+  --soft:#12100d;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* NAVIGATION */
+
 nav{
-position:fixed;
-top:0;
-width:100%;
-z-index:10;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 7%;
-background:rgba(8,8,8,.92);
-border-bottom:1px solid #292318;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:78px;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6%;
+  background:rgba(5,5,5,.72);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(205,164,93,.18);
 }
 
 .logo{
-font-size:22px;
-letter-spacing:4px;
-color:#d6b36a;
-font-weight:bold;
+  height:48px;
+  width:auto;
+  object-fit:contain;
 }
 
-nav a{
-color:#eee;
-text-decoration:none;
-margin-left:20px;
-font-size:13px;
+.navlinks{
+  display:flex;
+  gap:34px;
+  align-items:center;
 }
+
+.navlinks a{
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#eee;
+  transition:.3s;
+}
+
+.navlinks a:hover{
+  color:var(--gold2);
+}
+
+.menu{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* HERO */
 
 .hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:100px 20px 50px;
-background:
-radial-gradient(circle at 50% 35%,#302515 0,#0b0a08 35%,#080808 70%);
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  background:
+    linear-gradient(rgba(0,0,0,.38),rgba(0,0,0,.72)),
+    url("cover.jpg") center/cover no-repeat;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at center,transparent 15%,rgba(0,0,0,.65) 90%);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:850px;
+  padding:30px;
+  animation:fadeUp 1.5s ease;
+}
+
+.eyebrow{
+  color:var(--gold2);
+  font-size:12px;
+  letter-spacing:6px;
+  margin-bottom:24px;
 }
 
 .hero h1{
-font-family:Georgia,serif;
-font-size:clamp(48px,10vw,100px);
-font-weight:400;
-letter-spacing:-3px;
-margin-bottom:15px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(60px,10vw,120px);
+  line-height:.85;
+  font-weight:500;
+  margin-bottom:28px;
+}
+
+.hero h1 span{
+  color:var(--gold2);
 }
 
 .hero p{
-color:#c9c1b3;
-font-size:16px;
-letter-spacing:3px;
-text-transform:uppercase;
+  max-width:650px;
+  margin:auto;
+  font-size:13px;
+  line-height:2;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#ddd4c8;
+}
+
+.buttons{
+  margin-top:42px;
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
 }
 
 .btn{
-display:inline-block;
-margin-top:35px;
-padding:15px 28px;
-border:1px solid #caa45d;
-color:#fff;
-text-decoration:none;
-border-radius:2px;
-transition:.3s;
+  padding:17px 30px;
+  border:1px solid var(--gold);
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-size:11px;
+  transition:.4s;
+}
+
+.btn.primary{
+  background:var(--gold);
+  color:#080706;
 }
 
 .btn:hover{
-background:#caa45d;
-color:#111;
+  transform:translateY(-4px);
+  box-shadow:0 15px 35px rgba(205,164,93,.18);
 }
+
+/* SECTIONS */
 
 section{
-padding:90px 7%;
+  padding:110px 7%;
 }
 
-.title{
-font-family:Georgia,serif;
-font-size:42px;
-font-weight:400;
-margin-bottom:12px;
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
 }
 
-.subtitle{
-color:#aaa;
-margin-bottom:40px;
+.section-title small{
+  color:var(--gold);
+  letter-spacing:5px;
+  font-size:10px;
+  text-transform:uppercase;
+}
+
+.section-title h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:58px;
+  font-weight:500;
+  margin-top:12px;
+}
+
+/* COLLECTION */
+
+.collection{
+  background:
+    radial-gradient(circle at 50% 0%,rgba(205,164,93,.08),transparent 40%),
+    #080808;
 }
 
 .products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:25px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  max-width:1200px;
+  margin:auto;
 }
 
-.card{
-background:#111;
-border:1px solid #29251e;
-padding:25px;
-border-radius:8px;
+.product{
+  position:relative;
+  background:#11100e;
+  border:1px solid rgba(205,164,93,.16);
+  overflow:hidden;
+  transition:.5s;
 }
 
-.card .bottle{
-height:230px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(145deg,#1b1813,#080808);
-margin-bottom:20px;
-font-size:22px;
-color:#d6b36a;
-letter-spacing:2px;
+.product:hover{
+  transform:translateY(-10px);
+  border-color:rgba(205,164,93,.55);
+  box-shadow:0 25px 60px rgba(0,0,0,.5);
 }
 
-.card h3{
-font-family:Georgia,serif;
-font-size:25px;
-font-weight:400;
+.product-img{
+  height:390px;
+  background:#171411;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.product-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.7s;
+}
+
+.product:hover img{
+  transform:scale(1.06);
+}
+
+.product-info{
+  padding:27px;
+}
+
+.product-info small{
+  color:var(--gold);
+  letter-spacing:3px;
+  font-size:9px;
+}
+
+.product-info h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:32px;
+  font-weight:500;
+  margin:9px 0;
+}
+
+.product-info p{
+  color:#aaa29a;
+  font-size:11px;
+  line-height:1.8;
+  min-height:40px;
 }
 
 .price{
-color:#d6b36a;
-font-size:18px;
-margin-top:8px;
+  color:var(--gold2);
+  font-size:20px;
+  margin:20px 0;
 }
 
-.order{
-display:block;
-text-align:center;
-margin-top:20px;
-padding:12px;
-background:#d6b36a;
-color:#111;
-text-decoration:none;
-font-weight:bold;
-border-radius:3px;
+.order-btn{
+  display:block;
+  text-align:center;
+  padding:14px;
+  border:1px solid rgba(205,164,93,.5);
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  transition:.3s;
 }
+
+.order-btn:hover{
+  background:var(--gold);
+  color:#080706;
+}
+
+/* STORY */
 
 .story{
-max-width:750px;
-margin:auto;
-text-align:center;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:600px;
+  padding:0;
 }
 
-.story p{
-color:#bcb6aa;
-font-size:17px;
-margin-top:20px;
+.story-image{
+  background:url("cover.jpg") center/cover;
+  min-height:600px;
 }
+
+.story-content{
+  display:flex;
+  align-items:center;
+  padding:80px;
+  background:#100e0b;
+}
+
+.story-content small{
+  color:var(--gold);
+  letter-spacing:5px;
+}
+
+.story-content h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:58px;
+  line-height:.95;
+  font-weight:500;
+  margin:18px 0 28px;
+}
+
+.story-content p{
+  color:#b9b0a5;
+  line-height:2;
+  font-size:13px;
+}
+
+/* FEATURES */
 
 .features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-margin-top:45px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  max-width:1100px;
+  margin:auto;
+  gap:50px;
+  text-align:center;
 }
 
-.feature{
-border-top:1px solid #51442c;
-padding-top:20px;
+.feature-icon{
+  color:var(--gold);
+  font-size:28px;
+  margin-bottom:20px;
 }
 
 .feature h3{
-color:#d6b36a;
-margin-bottom:8px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:28px;
+  font-weight:500;
+  margin-bottom:12px;
 }
+
+.feature p{
+  color:#999;
+  font-size:11px;
+  line-height:1.8;
+}
+
+/* REVIEWS */
+
+.reviews{
+  background:#0d0c0a;
+}
+
+.review-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.review{
+  padding:30px;
+  background:#12110f;
+  border:1px solid rgba(205,164,93,.12);
+}
+
+.stars{
+  color:var(--gold2);
+  letter-spacing:4px;
+  margin-bottom:20px;
+}
+
+.review p{
+  color:#bbb;
+  font-size:12px;
+  line-height:2;
+}
+
+.review strong{
+  display:block;
+  margin-top:20px;
+  font-size:11px;
+  letter-spacing:2px;
+}
+
+/* DELIVERY */
+
+.delivery{
+  text-align:center;
+  background:
+    linear-gradient(rgba(7,7,7,.8),rgba(7,7,7,.95)),
+    url("cover.jpg") center/cover fixed;
+}
+
+.delivery-box{
+  max-width:850px;
+  margin:auto;
+}
+
+.delivery h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:60px;
+  font-weight:500;
+}
+
+.delivery p{
+  color:#bbb;
+  line-height:2;
+  margin:20px auto;
+  max-width:650px;
+  font-size:13px;
+}
+
+/* SOCIAL */
+
+.social{
+  text-align:center;
+}
+
+.social-links{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.social-links a{
+  border:1px solid #3b342a;
+  padding:15px 25px;
+  font-size:10px;
+  letter-spacing:2px;
+  transition:.3s;
+}
+
+.social-links a:hover{
+  border-color:var(--gold);
+  color:var(--gold2);
+}
+
+/* FOOTER */
 
 footer{
-padding:45px 20px;
-text-align:center;
-border-top:1px solid #292318;
-color:#888;
+  padding:50px 7%;
+  text-align:center;
+  border-top:1px solid rgba(205,164,93,.15);
 }
 
-@media(max-width:600px){
-nav{
-padding:15px 5%;
+footer img{
+  height:45px;
+  margin-bottom:20px;
 }
 
-nav a{
-margin-left:8px;
-font-size:11px;
+footer p{
+  color:#777;
+  font-size:10px;
+  letter-spacing:2px;
 }
 
-section{
-padding:70px 5%;
+/* WHATSAPP */
+
+.whatsapp{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:2000;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#25D366;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:25px;
+  box-shadow:0 8px 30px rgba(37,211,102,.25);
+  transition:.3s;
 }
+
+.whatsapp:hover{
+  transform:scale(1.1);
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(35px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  nav{
+    height:70px;
+    padding:0 5%;
+  }
+
+  .logo{
+    height:40px;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .navlinks{
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#090909;
+    display:none;
+    flex-direction:column;
+    padding:30px;
+    border-bottom:1px solid #292319;
+  }
+
+  .navlinks.open{
+    display:flex;
+  }
+
+  .hero{
+    min-height:100svh;
+  }
+
+  .hero h1{
+    font-size:65px;
+  }
+
+  .hero p{
+    font-size:10px;
+    letter-spacing:2px;
+  }
+
+  section{
+    padding:80px 5%;
+  }
+
+  .section-title h2{
+    font-size:45px;
+  }
+
+  .products{
+    grid-template-columns:1fr;
+  }
+
+  .product-img{
+    height:430px;
+  }
+
+  .story{
+    grid-template-columns:1fr;
+  }
+
+  .story-image{
+    min-height:400px;
+  }
+
+  .story-content{
+    padding:55px 25px;
+  }
+
+  .story-content h2{
+    font-size:48px;
+  }
+
+  .features{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+
+  .review-grid{
+    grid-template-columns:1fr;
+  }
+
+  .delivery h2{
+    font-size:48px;
+  }
 }
 </style>
 </head>
@@ -205,131 +609,319 @@ padding:70px 5%;
 <body>
 
 <nav>
-<div class="logo">AUREVANT</div>
+  <a href="#home">
+    <img src="logo.png" class="logo" alt="Aurevant">
+  </a>
 
-<div>
-<a href="#collection">Collection</a>
-<a href="#story">Story</a>
-<a href="#order">Order</a>
-</div>
+  <div class="menu" onclick="toggleMenu()">☰</div>
+
+  <div class="navlinks" id="navlinks">
+    <a href="#home">Home</a>
+    <a href="#collection">Collection</a>
+    <a href="#story">Our Story</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
-<section class="hero">
+<!-- HERO -->
 
-<div>
-<p>Essence of Distinction</p>
+<header class="hero" id="home">
+  <div class="hero-content">
 
-<h1>Wear the Presence.</h1>
+    <div class="eyebrow">THE ESSENCE OF DISTINCTION</div>
 
-<p>Luxury fragrances for those who leave an impression.</p>
+    <h1>
+      Wear the<br>
+      <span>Presence.</span>
+    </h1>
 
-<a class="btn" href="#collection">Explore Collection</a>
-</div>
+    <p>
+      Luxury fragrances crafted for those<br>
+      who leave an impression.
+    </p>
+
+    <div class="buttons">
+      <a href="#collection" class="btn primary">
+        Explore Collection
+      </a>
+
+      <a href="https://wa.me/8801806413849" class="btn">
+        Order on WhatsApp
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<!-- COLLECTION -->
+
+<section class="collection" id="collection">
+
+  <div class="section-title">
+    <small>AUREVANT COLLECTION</small>
+    <h2>Signature Fragrances</h2>
+  </div>
+
+  <div class="products">
+
+    <article class="product">
+      <div class="product-img">
+        <img src="hawas-ice.jpg" alt="Rasasi Hawas Ice">
+      </div>
+
+      <div class="product-info">
+        <small>MEN • EAU DE PARFUM</small>
+        <h3>Hawas Ice</h3>
+        <p>Fresh, powerful and unforgettable.</p>
+        <div class="price">৳4,000</div>
+
+        <a
+          class="order-btn"
+          href="https://wa.me/8801806413849?text=Hello%20Aurevant,%20I%20want%20to%20order%20Rasasi%20Hawas%20Ice."
+        >
+          Order Now
+        </a>
+      </div>
+    </article>
+
+    <article class="product">
+      <div class="product-img">
+        <img src="cdnim.jpg" alt="Club de Nuit Intense Man">
+      </div>
+
+      <div class="product-info">
+        <small>MEN • EAU DE PARFUM</small>
+        <h3>Club de Nuit Intense Man</h3>
+        <p>Bold character with a memorable trail.</p>
+        <div class="price">Message for price</div>
+
+        <a
+          class="order-btn"
+          href="https://wa.me/8801806413849?text=Hello%20Aurevant,%20I%20want%20to%20order%20Club%20de%20Nuit%20Intense%20Man."
+        >
+          Order Now
+        </a>
+      </div>
+    </article>
+
+    <article class="product">
+      <div class="product-img">
+        <img src="sauvage.jpg" alt="Dior Sauvage EDP">
+      </div>
+
+      <div class="product-info">
+        <small>MEN • EAU DE PARFUM</small>
+        <h3>Dior Sauvage EDP</h3>
+        <p>Modern, refined and unmistakably confident.</p>
+        <div class="price">Message for price</div>
+
+        <a
+          class="order-btn"
+          href="https://wa.me/8801806413849?text=Hello%20Aurevant,%20I%20want%20to%20order%20Dior%20Sauvage%20EDP."
+        >
+          Order Now
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- STORY -->
+
+<section class="story" id="story">
+
+  <div class="story-image"></div>
+
+  <div class="story-content">
+    <div>
+      <small>THE AUREVANT STORY</small>
+
+      <h2>
+        Two souls.<br>
+        One essence.
+      </h2>
+
+      <p>
+        Aurevant was created for people who understand that
+        fragrance is more than a scent. It is identity,
+        memory and presence.
+        <br><br>
+        Every fragrance in our collection is selected to bring
+        elegance, character and distinction to your everyday
+        moments.
+      </p>
+    </div>
+  </div>
 
 </section>
 
-<section id="collection">
+<!-- FEATURES -->
 
-<h2 class="title">The Collection</h2>
+<section>
 
-<p class="subtitle">
-Selected fragrances. Distinct character. Refined presence.
-</p>
+  <div class="section-title">
+    <small>THE AUREVANT STANDARD</small>
+    <h2>Made for Distinction</h2>
+  </div>
 
-<div class="products">
+  <div class="features">
 
-<div class="card">
-<div class="bottle">HAWAS ICE</div>
-<h3>Rasasi Hawas Ice</h3>
-<div class="price">৳4,000</div>
+    <div class="feature">
+      <div class="feature-icon">✦</div>
+      <h3>Premium Selection</h3>
+      <p>
+        Carefully selected fragrances for a refined
+        fragrance wardrobe.
+      </p>
+    </div>
 
-<a class="order"
-href="https://wa.me/8801806413849?text=Hello%20Aurevant,%20I%20want%20to%20order%20Rasasi%20Hawas%20Ice">
-Order on WhatsApp
-</a>
-</div>
+    <div class="feature">
+      <div class="feature-icon">◇</div>
+      <h3>Authenticity First</h3>
+      <p>
+        Product authenticity and quality remain at
+        the heart of Aurevant.
+      </p>
+    </div>
 
-<div class="card">
-<div class="bottle">CDNIM</div>
-<h3>Club de Nuit Intense Man</h3>
-<div class="price">Message for price</div>
+    <div class="feature">
+      <div class="feature-icon">⌁</div>
+      <h3>Nationwide Delivery</h3>
+      <p>
+        We deliver your fragrance across Bangladesh.
+      </p>
+    </div>
 
-<a class="order"
-href="https://wa.me/8801806413849?text=Hello%20Aurevant,%20I%20want%20to%20order%20Club%20de%20Nuit%20Intense%20Man">
-Order on WhatsApp
-</a>
-</div>
-
-<div class="card">
-<div class="bottle">SAUVAGE</div>
-<h3>Dior Sauvage EDP</h3>
-<div class="price">Message for price</div>
-
-<a class="order"
-href="https://wa.me/8801806413849?text=Hello%20Aurevant,%20I%20want%20to%20order%20Dior%20Sauvage%20EDP">
-Order on WhatsApp
-</a>
-</div>
-
-</div>
+  </div>
 </section>
 
-<section id="story">
+<!-- REVIEWS -->
 
-<div class="story">
+<section class="reviews" id="reviews">
 
-<h2 class="title">Two Souls. One Essence.</h2>
+  <div class="section-title">
+    <small>WHAT THEY SAY</small>
+    <h2>Customer Experiences</h2>
+  </div>
 
-<p>
-Aurevant was created for people who understand that fragrance
-is more than a scent. It is presence, memory and identity.
-Every selection is chosen to bring elegance and distinction
-to your everyday moments.
-</p>
+  <div class="review-grid">
 
-<div class="features">
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>
+        "Beautiful presentation and a very premium
+        experience from ordering to delivery."
+      </p>
+      <strong>— AUREVANT CUSTOMER</strong>
+    </div>
 
-<div class="feature">
-<h3>Premium Selection</h3>
-<p>Carefully selected fragrances from sought-after collections.</p>
-</div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>
+        "The fragrance selection feels completely
+        different from ordinary perfume pages."
+      </p>
+      <strong>— AUREVANT CUSTOMER</strong>
+    </div>
 
-<div class="feature">
-<h3>Authenticity First</h3>
-<p>We focus on genuine products and transparent service.</p>
-</div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>
+        "Elegant packaging, great communication and
+        a beautiful overall experience."
+      </p>
+      <strong>— AUREVANT CUSTOMER</strong>
+    </div>
 
-<div class="feature">
-<h3>Nationwide Delivery</h3>
-<p>Order from anywhere in Bangladesh through WhatsApp.</p>
-</div>
+  </div>
+</section>
 
-</div>
+<!-- DELIVERY -->
 
-</div>
+<section class="delivery">
+
+  <div class="delivery-box">
+
+    <div class="section-title">
+      <small>DELIVERED TO YOUR DOOR</small>
+      <h2>Nationwide Delivery</h2>
+    </div>
+
+    <p>
+      Order your fragrance from anywhere in Bangladesh.
+      Contact Aurevant through WhatsApp to confirm your
+      product, price and delivery details.
+    </p>
+
+    <a
+      href="https://wa.me/8801806413849"
+      class="btn primary"
+    >
+      Start Your Order
+    </a>
+
+  </div>
 
 </section>
 
-<section id="order">
+<!-- SOCIAL -->
 
-<div class="story">
+<section class="social" id="contact">
 
-<h2 class="title">Ready to Find Your Signature?</h2>
+  <div class="section-title">
+    <small>FOLLOW AUREVANT</small>
+    <h2>Stay in the Essence</h2>
+  </div>
 
-<p>Message Aurevant directly to place your order.</p>
+  <div class="social-links">
 
-<a class="btn"
-href="https://wa.me/8801806413849?text=Hello%20Aurevant,%20I%20want%20to%20place%20an%20order">
-Order via WhatsApp
-</a>
+    <a href="#" target="_blank">Instagram</a>
 
-</div>
+    <a href="#" target="_blank">Facebook</a>
+
+    <a href="https://wa.me/8801806413849">
+      WhatsApp
+    </a>
+
+  </div>
 
 </section>
+
+<!-- FOOTER -->
 
 <footer>
-© 2026 Aurevant — Essence of Distinction
+
+  <img src="logo.png" alt="Aurevant">
+
+  <p>
+    © 2026 AUREVANT — ESSENCE OF DISTINCTION
+  </p>
+
 </footer>
+
+<!-- WHATSAPP -->
+
+<a
+  class="whatsapp"
+  href="https://wa.me/8801806413849"
+  aria-label="WhatsApp"
+>
+  ☎
+</a>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navlinks").classList.toggle("open");
+}
+
+document.querySelectorAll(".navlinks a").forEach(function(link){
+  link.addEventListener("click",function(){
+    document.getElementById("navlinks").classList.remove("open");
+  });
+});
+</script>
 
 </body>
 </html>
